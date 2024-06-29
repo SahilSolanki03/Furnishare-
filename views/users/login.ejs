@@ -1,0 +1,21 @@
+<% layout("/layouts/boylerplate") -%>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2 mt-2">
+            <h1>Login for WanderLust</h1>
+            <form method="post" action="/users/login" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="username" class="form-lable">Username</label>
+                    <input type="text" id="username" name="username" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-lable">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+                <button class="btn btn-success mb-2">Log-in</button>
+            </form>
+            <hr>
+            <p>Don't have an Account! <a class="btn btn-sm btn-warning mb-2" href="/users/signup">signup</a></p>
+        </div>
+    </div>
+</body>

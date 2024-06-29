@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"><i class="fa-solid fa-compass"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" aria-current="page" href="/">Home</a>
+          <a class="nav-link" href="/listings">All listings</a>
+          <a class="nav-link" href="/listings/new/add">Add listings</a>
+        </div>
+        <div class="search-bar">
+        <form class="d-flex" role="search" method="post" action="/listings/search">
+          <select class="form-select form-control border border-dark" aria-label="Default select example" name="item" required>
+            <option selected>All</option>
+            <option value="Table">Table</option>
+            <option value="Sofa">Sofa</option>
+            <option value="Bed">Bed</option>
+            <option value="Chair">Chair</option>
+            <option value="Dining Set">Dining Set</option>
+            <option value="Coffee Table">Coffee Table</option>
+            <option value="Recliner">Recliner</option>
+            <option value="Bookshelf">Bookshelf</option>
+            <option value="Wardrobe">Wardrobe</option>
+            <option value="Nightstand">Nightstand</option>
+            <option value="Desk">Desk</option>
+            <option value="TV Stand">TV Stand</option>
+            <option value="Ottoman">Ottoman</option>
+            <option value="Loveseat">Loveseat</option>
+            <option value="Bar Stool">Bar Stool</option>
+            <option value="Dining Chair">Dining Chair</option>
+            <option value="Side Table">Side Table</option>
+            <option value="Armchair">Armchair</option>
+            <option value="Futon">Futon</option>
+            <option value="Chaise Lounge">Chaise Lounge</option>
+          </select>
+          <select class="form-select form-control border border-dark" aria-label="Default select example" name="price" required>
+            <option selected>Any</option>
+            <option value="50">Under 50</option>
+            <option value="100">Under 100</option>
+            <option value="150">Under 150</option>
+            <option value="200">Under 200</option>
+            <option value="250">Under 250</option>
+            <option value="300">Under 300</option>
+            <option value="500">Under 500</option>
+            <option value="750">Under 750</option>
+            <option value="1000">Under 1000</option>
+          </select>
+          <button class="mx-2 btn search-btn" type="submit">Search</button>
+        </form>
+        </div>
+        <div class="navbar-nav ms-auto">
+          <% if(!crrUser) { %>
+          <a class="nav-link" href="/users/signup">signup</a>
+          <a class="nav-link" href="/users/login">login</a>
+          <% } else {  %>
+          <a class="nav-link" href="/users/logout">logout</a>
+          <a class="nav-link" href="/users/profile"><i class="fa-solid fa-user"> profile</i></a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+</nav>

@@ -1,0 +1,54 @@
+<% layout("/layouts/boylerplate") -%>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2 mt-2">
+            <h3>Edit Listing</h3>
+            <form method="post" action="/listings/<%= listing._id %>?_method=PUT" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="item" class="form-lable">Item</label>
+                    <select class="form-select form-control" aria-label="Default select example" name="listing[item]" required>
+                        <option selected><%= listing.item %></option>
+                        <option value="Table">Table</option>
+                        <option value="Sofa">Sofa</option>
+                        <option value="Bed">Bed</option>
+                        <option value="Chair">Chair</option>
+                        <option value="Dining Set">Dining Set</option>
+                        <option value="Coffee Table">Coffee Table</option>
+                        <option value="Recliner">Recliner</option>
+                        <option value="Bookshelf">Bookshelf</option>
+                        <option value="Wardrobe">Wardrobe</option>
+                        <option value="Nightstand">Nightstand</option>
+                        <option value="Desk">Desk</option>
+                        <option value="TV Stand">TV Stand</option>
+                        <option value="Ottoman">Ottoman</option>
+                        <option value="Loveseat">Loveseat</option>
+                        <option value="Bar Stool">Bar Stool</option>
+                        <option value="Dining Chair">Dining Chair</option>
+                        <option value="Side Table">Side Table</option>
+                        <option value="Armchair">Armchair</option>
+                        <option value="Futon">Futon</option>
+                        <option value="Chaise Lounge">Chaise Lounge</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-lable">Description</label>
+                    <textarea name="listing[description]" class="form-control" required><%= listing.description %></textarea>
+                    <div class="invalid-feedback">Pleas enter short description</div>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-lable">Image</label>
+                    <input type="text" name="listing[image]" value="<%= listing.image %>" class="form-control" required>
+                    <div class="invalid-feedback">Image is required</div>
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="price" class="form-lable">Price</label>
+                        <input type="number" name="listing[price]" value="<%= listing.price %>" class="form-control" required>
+                        <div class="invalid-feedback">Price should be valid</div>
+                    </div>
+                </div>
+                <button class="btn btn-dark edit-btn mb-2">Edit</button>
+            </form>
+        </div>
+    </div>
+</body>
